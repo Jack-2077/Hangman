@@ -68,14 +68,18 @@ class Hangman extends Component {
   render() {
     let gameOver = this.state.nWrong >= this.props.maxWrong
     let altText = `${this.state.nWrong}/${this.props.maxWrong} wrong guesses`
+    let isWinner = this.guessedWord().join("") === this.state.answer
+    let gameState = this.generateButtons()
+    if (isWinner) gameState = "You Win"
+    if (gameOver) gameState = "You lose"
     return (
       <div className='Hangman'>
         <h1>Hangman</h1>
         <img src={this.props.images[this.state.nWrong]} alt={altText} />
         <p>Guessed wrong: {this.state.nWrong}</p>
         <p className='Hangman-word'>{!gameOver ? this.guessedWord() : this.state.answer }</p>
-        <p className='Hangman-btns'>{!gameOver ? this.generateButtons() : "You Lose"}</p>
-        <button onClick={this.reset}>Restart</button>
+        <p className='Hangman-btns'>{gameState}</p>
+        <button id="reset" onClick={this.reset}>Restart?</button>
       </div>
     );
   }

@@ -37,7 +37,7 @@
   font-family: inherit;
   font-size: 1rem;
   cursor: pointer;
-  width: 30px;
+  width: 22px;
   margin: 5px 2px 2px 2px;
   letter-spacing: 1px;
   outline: none;
@@ -56,4 +56,17 @@
   background: #bdbdbd;
   color: #eeeeee;
   box-shadow: 0 6px #9e9e9e;
+}
+
+#reset{
+  width: auto;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  background: #FF9933;
+  box-shadow: 0 6px #FF6600;
+}
+
+#reset:hover{
+  background: #FF6600;
 }
